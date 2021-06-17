@@ -249,14 +249,8 @@ github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639/go.mod h1:
 github.com/inconshreveable/mousetrap v1.0.0 h1:Z8tu5sraLXCXIcARxBp/8cbvlwVa7Z1NHg9XEKhtSvM=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
 github.com/influxdata/influxdb1-client v0.0.0-20191209144304-8bf82d3c094d/go.mod h1:qj24IKcXYK6Iy9ceXlo3Tc+vtHo9lIhSX5JddghvEPo=
-github.com/jakefau/goAdafruit v0.0.0-20210616231834-5bd3c071bfa1 h1:+uW1OGoURyv3STO310dSC4Rd74Vhh1VOgWMtG7enJvQ=
-github.com/jakefau/goAdafruit v0.0.0-20210616231834-5bd3c071bfa1/go.mod h1:zsQkuXyhDO48jrTlJCtx+VcaZN25eGHZuuuaSYTfmtU=
-github.com/jakefau/goAdafruit v0.0.0-20210616235819-5396ec656819 h1:fJgt3bRD3gFyGKmLkPj7NZ4GKAibG9PudnWY7/HbHkc=
-github.com/jakefau/goAdafruit v0.0.0-20210616235819-5396ec656819/go.mod h1:zsQkuXyhDO48jrTlJCtx+VcaZN25eGHZuuuaSYTfmtU=
-github.com/jakefau/goAdafruit v0.0.0-20210617003757-e63db6015d02 h1:No8JZagh31TLqP8I0WQ714hpjE1Cv0kYpM4d7eG//rE=
-github.com/jakefau/goAdafruit v0.0.0-20210617003757-e63db6015d02/go.mod h1:zsQkuXyhDO48jrTlJCtx+VcaZN25eGHZuuuaSYTfmtU=
-github.com/jakefau/goAdafruit v0.0.0-20210617010846-9a1214ef5134 h1:CsEBOhwV27gPAl/Fn7jyerbyZiAQrTptde6ejagNMNY=
-github.com/jakefau/goAdafruit v0.0.0-20210617010846-9a1214ef5134/go.mod h1:zsQkuXyhDO48jrTlJCtx+VcaZN25eGHZuuuaSYTfmtU=
+github.com/jakefau/goAdafruit v0.0.0-20210617105659-591cf2761c5c h1:6QwwkGzODY9QUOQ/RcfbgYPbKuBElJNq36mkvEcV2a4=
+github.com/jakefau/goAdafruit v0.0.0-20210617105659-591cf2761c5c/go.mod h1:zsQkuXyhDO48jrTlJCtx+VcaZN25eGHZuuuaSYTfmtU=
 github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af/go.mod h1:Nht3zPeWKUH0NzdCt2Blrr5ys8VGpn0CEB0cQHVjt7k=
 github.com/jonboulle/clockwork v0.1.0/go.mod h1:Ii8DK3G1RaLaWxj9trq07+26W01tbo22gdxWY5EU2bo=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
@@ -628,7 +622,6 @@ golang.org/x/sys v0.0.0-20210315160823-c6e025ad8005/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20210320140829-1e4c9ba3b0c4/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210330210617-4fbd30eecc44/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210403161142-5e06dd20ab57/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
-golang.org/x/sys v0.0.0-20210510120138-977fb7262007 h1:gG67DSER+11cZvqIMb8S8bt0vZtiN6xWYARwirrOSfE=
 golang.org/x/sys v0.0.0-20210510120138-977fb7262007/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20210616094352-59db8d763f22 h1:RqytpXGR1iVNX7psjB3ff8y7sNFinVFvkx1c8SjBkio=
 golang.org/x/sys v0.0.0-20210616094352-59db8d763f22/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
@@ -639,7 +632,6 @@ golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
 golang.org/x/text v0.3.3/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
 golang.org/x/text v0.3.4/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
-golang.org/x/text v0.3.5 h1:i6eZZ+zk0SOf0xgBpEpPD18qWcJda6q1sxt3S0kzyUQ=
 golang.org/x/text v0.3.5/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
 golang.org/x/text v0.3.6 h1:aRYxNxv6iGQlyVaZmk6ZgYEDa+Jg18DxebPSrd6bg1M=
 golang.org/x/text v0.3.6/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
