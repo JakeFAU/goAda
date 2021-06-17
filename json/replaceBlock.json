@@ -1,0 +1,29 @@
+{
+    "name": "Test Block",
+    "visual_type": "line_chart",
+    "column": 2,
+    "row": 2,
+    "size_x": null,
+    "size_y": null,
+    "source_key": null,
+    "source": null,
+    "properties": {
+      "xAxisLabel": "X",
+      "yAxisLabel": "Y",
+      "yAxisMin": "",
+      "yAxisMax": "",
+      "decimalPlaces": "-1",
+      "rawDataOnly": false,
+      "steppedLine": false,
+      "feedKeyLegend": false,
+      "gridLines": false,
+      "historyHours": "2"
+    },
+    "created_at": "2021-06-03T19:48:54Z",
+    "updated_at": "2021-06-13T14:48:44Z",
+    "block_feeds": [
+      {
+        "id": 2191135
+      }
+    ]
+  }
