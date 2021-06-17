@@ -22,36 +22,44 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
+	"os"
 
+	aio "github.com/jakefau/goAdafruit"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
-// activitiesCmd represents the activities command
-var activitiesCmd = &cobra.Command{
-	Use:   "activities",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+// allFeedsCmd represents the allFeeds command
+var allFeedsCmd = &cobra.Command{
+	Use:   "all",
+	Short: "Returns all feeds",
+	Long: `Feeds are the core of the Adafruit IO system. The feed holds metadata about the data you push to Adafruit IO. This includes settings for whether the data is public or private, what license the stored data falls under, and a general description of the data. The feed also contains the sensor data values that get pushed to Adafruit IO from your device.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	You will need to create one feed for each unique source of data you send to Adafruit IO.
+	
+	You can create, read, update, or delete feeds. Every CREATE, UPDATE, or DELETE action on a feed record counts against your rate limit.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("activities called")
+		client := aio.NewClient(viper.GetString("IOKEY"), viper.GetString("IOUSER"))
+		feeds, _, err := client.Feed.All()
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		for _, f := range feeds {
+			jsonResult, err := json.MarshalIndent(f, "", "  ")
+			if err != nil {
+				fmt.Println(err)
+				os.Exit(1)
+			}
+			fmt.Println(string(jsonResult))
+
+		}
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(activitiesCmd)
+	feedsCmd.AddCommand(allFeedsCmd)
 
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// activitiesCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// activitiesCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
