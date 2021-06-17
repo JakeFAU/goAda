@@ -24,7 +24,6 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	aio "github.com/jakefau/goAdafruit"
@@ -32,44 +31,28 @@ import (
 	"github.com/spf13/viper"
 )
 
-var oldDashboardID string
-
-// replaceDashboardCmd represents the replaceDashboard command
-var replaceDashboardCmd = &cobra.Command{
-	Use:   "replace",
-	Short: "A brief description of your command",
-	Long:  `Dashboards allow you to visualize data and control Adafruit IO connected projects from any modern web browser. Blocks such as charts, sliders, and buttons are available to help you quickly get your IoT project up and running without the need for any custom code.`,
+// userIinfoCmd represents the userIinfo command
+var userIinfoCmd = &cobra.Command{
+	Use:   "info",
+	Short: "A User record",
+	Long:  `Basic information about the user`,
 	Run: func(cmd *cobra.Command, args []string) {
-		dashFile, err := ioutil.ReadFile(fileName)
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
 		client := aio.NewClient(viper.GetString("IOKEY"), viper.GetString("IOUSER"))
-		b := aio.Dashboard{}
-		err = json.Unmarshal([]byte(dashFile), &b)
+		user, _, err := client.User.GetUserInformation()
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
-		board, _, err := client.Dashboard.ChangeDashboard(dashboardID, b)
+		jsonResult, err := json.MarshalIndent(user, "", "  ")
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
-		jsonDash, err := json.MarshalIndent(board, "", "  ")
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
-		fmt.Println(string(jsonDash))
+		fmt.Println(string(jsonResult))
 
 	},
 }
 
 func init() {
-	dashboardsCmd.AddCommand(replaceDashboardCmd)
-	replaceDashboardCmd.Flags().StringVarP(&oldDashboardID, "board", "b", "", "The ID of the dashboard to replace")
-	replaceDashboardCmd.Flags().StringVarP(&fileName, "file", "f", "", "The JSON file to use")
-
+	usersCmd.AddCommand(userIinfoCmd)
 }
