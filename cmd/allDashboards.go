@@ -22,6 +22,7 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 
@@ -34,12 +35,7 @@ import (
 var allDashboardsCmd = &cobra.Command{
 	Use:   "all",
 	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Long:  `Dashboards allow you to visualize data and control Adafruit IO connected projects from any modern web browser. Blocks such as charts, sliders, and buttons are available to help you quickly get your IoT project up and running without the need for any custom code.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		client := aio.NewClient(viper.GetString("IOKEY"), viper.GetString("IOUSER"))
 		dashboards, _, err := client.Dashboard.AllDashboards()
@@ -48,7 +44,13 @@ to quickly create a Cobra application.`,
 			os.Exit(1)
 		}
 		for _, d := range dashboards {
-			fmt.Println(d)
+			jsonResult, err := json.MarshalIndent(d, "", "  ")
+			if err != nil {
+				fmt.Println(err)
+				os.Exit(1)
+			}
+			fmt.Println(string(jsonResult))
+
 		}
 	},
 }

@@ -16,6 +16,7 @@ limitations under the License.
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 
@@ -37,7 +38,13 @@ var allCmd = &cobra.Command{
 			os.Exit(1)
 		}
 		for _, b := range blocks {
-			fmt.Println(b)
+			jsonResult, err := json.MarshalIndent(b, "", "  ")
+			if err != nil {
+				fmt.Println(err)
+				os.Exit(1)
+			}
+			fmt.Println(string(jsonResult))
+
 		}
 	},
 }

@@ -24,7 +24,6 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	aio "github.com/jakefau/goAdafruit"
@@ -32,42 +31,29 @@ import (
 	"github.com/spf13/viper"
 )
 
-var fileName string
-
-// createBlockCmd represents the createBlock command
-var createBlockCmd = &cobra.Command{
-	Use:   "create",
-	Short: "Create a new block from JSON",
-	Long:  `Blocks are objects which can be placed on an Adafruit IO Dasboard for a user. Blocks IO range from input blocks (sliders and buttons) to output blocks (such as maps or other visual displays).`,
+// getDashboardCmd represents the getDashboard command
+var getDashboardCmd = &cobra.Command{
+	Use:   "get",
+	Short: "Get an existing dashboard",
+	Long:  `Dashboards allow you to visualize data and control Adafruit IO connected projects from any modern web browser. Blocks such as charts, sliders, and buttons are available to help you quickly get your IoT project up and running without the need for any custom code.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		blockFile, err := ioutil.ReadFile(fileName)
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
 		client := aio.NewClient(viper.GetString("IOKEY"), viper.GetString("IOUSER"))
-		b := aio.Block{}
-		err = json.Unmarshal([]byte(blockFile), &b)
+		dashboard, _, err := client.Dashboard.GetDashboard(blockID)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
-		newBlock, _, err := client.Blocks.CreateBlock(dashboardID, &b)
+		jsonDash, err := json.MarshalIndent(dashboard, "", "  ")
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
-		jsonResult, err := json.MarshalIndent(newBlock, "", "  ")
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
-		fmt.Println(string(jsonResult))
-
+		fmt.Println(string(jsonDash))
 	},
 }
 
 func init() {
-	blocksCmd.AddCommand(createBlockCmd)
-	createBlockCmd.Flags().StringVarP(&fileName, "file", "f", "", "The JSON file to use")
+	dashboardsCmd.AddCommand(getDashboardCmd)
+	getDashboardCmd.Flags().StringVarP(&blockID, "id", "i", "", "The dashboard ID")
+
 }

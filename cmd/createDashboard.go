@@ -36,12 +36,7 @@ import (
 var createDashboardCmd = &cobra.Command{
 	Use:   "create",
 	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Long:  `Dashboards allow you to visualize data and control Adafruit IO connected projects from any modern web browser. Blocks such as charts, sliders, and buttons are available to help you quickly get your IoT project up and running without the need for any custom code.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		dashboardFile, err := ioutil.ReadFile(fileName)
 		if err != nil {
@@ -60,7 +55,13 @@ to quickly create a Cobra application.`,
 			fmt.Println(err)
 			os.Exit(1)
 		}
-		fmt.Println(newDashboard)
+		jsonResult, err := json.MarshalIndent(newDashboard, "", "  ")
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		fmt.Println(string(jsonResult))
+
 	},
 }
 

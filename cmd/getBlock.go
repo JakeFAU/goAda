@@ -22,6 +22,7 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 
@@ -44,7 +45,12 @@ var getBlockCmd = &cobra.Command{
 			fmt.Println(err)
 			os.Exit(1)
 		}
-		fmt.Println(block)
+		jsonResult, err := json.MarshalIndent(block, "", "  ")
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		fmt.Println(string(jsonResult))
 
 	},
 }

@@ -249,8 +249,10 @@ github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639/go.mod h1:
 github.com/inconshreveable/mousetrap v1.0.0 h1:Z8tu5sraLXCXIcARxBp/8cbvlwVa7Z1NHg9XEKhtSvM=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
 github.com/influxdata/influxdb1-client v0.0.0-20191209144304-8bf82d3c094d/go.mod h1:qj24IKcXYK6Iy9ceXlo3Tc+vtHo9lIhSX5JddghvEPo=
-github.com/jakefau/goAdafruit v0.0.0-20210617105659-591cf2761c5c h1:6QwwkGzODY9QUOQ/RcfbgYPbKuBElJNq36mkvEcV2a4=
-github.com/jakefau/goAdafruit v0.0.0-20210617105659-591cf2761c5c/go.mod h1:zsQkuXyhDO48jrTlJCtx+VcaZN25eGHZuuuaSYTfmtU=
+github.com/jakefau/goAdafruit v0.0.0-20210617112909-ea97b733d46f h1:gNMdBlFdLJ9hv+SQ+wecv1X+Se+ccFTmU6yVTQT3Bes=
+github.com/jakefau/goAdafruit v0.0.0-20210617112909-ea97b733d46f/go.mod h1:zsQkuXyhDO48jrTlJCtx+VcaZN25eGHZuuuaSYTfmtU=
+github.com/jakefau/goAdafruit v0.0.0-20210617131058-46221fc3e6d7 h1:jKy4PZQD+WJjqno80RQ0J+E2lE31PVyUs1865zVqE10=
+github.com/jakefau/goAdafruit v0.0.0-20210617131058-46221fc3e6d7/go.mod h1:zsQkuXyhDO48jrTlJCtx+VcaZN25eGHZuuuaSYTfmtU=
 github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af/go.mod h1:Nht3zPeWKUH0NzdCt2Blrr5ys8VGpn0CEB0cQHVjt7k=
 github.com/jonboulle/clockwork v0.1.0/go.mod h1:Ii8DK3G1RaLaWxj9trq07+26W01tbo22gdxWY5EU2bo=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
