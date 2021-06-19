@@ -1,0 +1,12 @@
+{
+    "feeds": [
+      {
+        "key": "temperature",
+        "value": "75"
+      },
+      {
+        "key": "humidity",
+        "value": "51"
+      }
+    ]
+  }
