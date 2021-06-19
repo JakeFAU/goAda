@@ -3,7 +3,7 @@ module github.com/jakefau/goAda
 go 1.16
 
 require (
-	github.com/jakefau/goAdafruit v0.0.0-20210618163626-921773f4d7e6
+	github.com/jakefau/goAdafruit v0.0.0-20210618201131-00b311e574fa
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/spf13/cobra v1.1.3
 	github.com/spf13/viper v1.8.0

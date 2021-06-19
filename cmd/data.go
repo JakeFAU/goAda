@@ -25,20 +25,19 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var dashboardID string
+// dataCmd represents the data command
+var dataCmd = &cobra.Command{
+	Use:   "data",
+	Short: "A piece of data",
+	Long: `Data is at the heart of Adafruit IO. Everything your device measures and records becomes a data point on an Adafruit IO Feed.
 
-// blocksCmd represents the blocks command
-var blocksCmd = &cobra.Command{
-	Use:   "blocks",
-	Short: "Blocks belong on a dashboard",
-	Long:  `Blocks are objects which can be placed on an Adafruit IO Dasboard for a user. Blocks IO range from input blocks (sliders and buttons) to output blocks (such as maps or other visual displays).`,
-	// Run: func(cmd *cobra.Command, args []string) {
-	// 	fmt.Println("blocks called")
-	// },
+	You can create, read, update, or delete data records. Every CREATE, UPDATE, or DELETE action on a data record counts against your rate limit.
+	
+	Data points belong to feeds, so every Data API call starts with a Feed URL.`,
+	Run: func(cmd *cobra.Command, args []string) {},
 }
 
 func init() {
-	rootCmd.AddCommand(blocksCmd)
-	blocksCmd.PersistentFlags().StringVarP(&dashboardID, "dashboard", "d", "", "The dashboard the blocks are on")
-
+	rootCmd.AddCommand(dataCmd)
+	dataCmd.PersistentFlags().StringVarP(&feedID, "feed", "f", "", "The feed the data belongs to")
 }
