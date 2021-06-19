@@ -30,13 +30,12 @@ import (
 // feedsCmd represents the feeds command
 var feedsCmd = &cobra.Command{
 	Use:   "feeds",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Manipulate feeds",
+	Long: `Feeds are the core of the Adafruit IO system. The feed holds metadata about the data you push to Adafruit IO. This includes settings for whether the data is public or private, what license the stored data falls under, and a general description of the data. The feed also contains the sensor data values that get pushed to Adafruit IO from your device.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	You will need to create one feed for each unique source of data you send to Adafruit IO.
+	
+	You can create, read, update, or delete feeds. Every CREATE, UPDATE, or DELETE action on a feed record counts against your rate limit.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("feeds called")
 	},

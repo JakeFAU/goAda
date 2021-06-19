@@ -30,13 +30,8 @@ import (
 // tokenCmd represents the token command
 var tokenCmd = &cobra.Command{
 	Use:   "token",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Manipulate tokens",
+	Long:  `Tokens are used for authenticating an Adafruit IO user. See the Authentication page for more information about this.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("token called")
 	},

@@ -30,13 +30,10 @@ import (
 // groupsCmd represents the groups command
 var groupsCmd = &cobra.Command{
 	Use:   "groups",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Manipulate groups",
+	Long: `Groups are a set of Feeds. They're used for publishing and reading to multiple feeds at a time. For example, if you are building a weather station, you would add feeds for humidity and temperature to a new weatherstation group.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	You can create, read, update, or delete group records. Every CREATE, UPDATE, or DELETE action on a group record counts against your rate limit.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("groups called")
 	},
